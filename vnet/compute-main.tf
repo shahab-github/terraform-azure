@@ -47,3 +47,9 @@ resource "azurerm_public_ip" "myPublicIP" {
     location = azurerm_resource_group.myapp01.location
     allocation_method = "Static"
 }
+
+# Attaching network security group to network interface
+resource "azurerm_network_interface_security_group_association" "example" {
+  network_interface_id      = azurerm_network_interface.myNIC.id
+  network_security_group_id = azurerm_network_security_group.mynsg.id
+}
