@@ -47,7 +47,7 @@ resource "azurerm_network_security_group" "mynsg" {
     }
 
     security_rule {
-        name                       = "http"
+        name                       = "ssh"
         priority                   = 110
         direction                  = "Inbound"
         access                     = "Allow"
